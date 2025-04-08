@@ -8,7 +8,19 @@ function filterAction() {
     for (let card of cards) {
     let name = card.querySelector('h2')
 
-    name = name.textContent
+    name = name.textContent.toLowerCase()
+
+    let inputText = input.value.toLowerCase()
+
+    if(!name.includes(inputText)) {
+      card.style.display = 'none'
+    } else {
+      card.style.display = 'block'
+    }
+    }
+  } else {
+    for(let card of cards) {
+      card.style.display = 'block'
     }
   }
 }
